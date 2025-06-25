@@ -1,0 +1,92 @@
+.App {
+  body {
+    font-family: "Myriad Pro", sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+  }
+  button {
+    padding: 10px;
+  }
+  .notifications {
+    position: fixed; /* insure that is stays while scrolling - myText */
+    bottom: 16px; /* Position it 16px from the bottom */
+    left: 50%; /* Horizontally center it */
+    transform: translateX(
+      -50%
+    ); /* Offset by 50% of its width to truly center it */
+    z-index: 9999; /* Ensure it's on top of other content */
+  }
+  .toast {
+    font-family: "Myriad Pro", sans-serif;
+    position: relative;
+    padding: 12px 16px;
+    color: #fff;
+    margin-bottom: 10px;
+
+    display: flex;
+    width: 349px;
+    padding: var(--spacing-150, 12px) var(--spacing-200, 16px);
+    align-items: flex-start;
+    gap: var(--spacing-150, 12px);
+
+    --color: var(--primary-content-level1-rest, #fff);
+    background-color: #313135; /*right color*/
+    border-radius: 6px;
+  }
+
+  .toast .content span {
+    flex: 1 0 0;
+    /*padding: 2px 0px;*/
+    color: #fff; /*right color*/
+    font-size: 14px; /* Adjust the font size of the text */
+
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+  }
+  .toast i {
+    color: var(--color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+  }
+  .toast span,
+  .toast i:nth-child(3) {
+    /* close icon */
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .toast.error {
+    --color: var(--status-content-icon-solid-error, #f02c3d);
+  }
+  .toast.warning {
+    --color: var(--status-content-icon-solid-warning, #d46213);
+  }
+  .toast.info {
+    --color: var(--status-content-icon-solid-info, #3685f5);
+  }
+
+  .toast.success {
+    --color: var(--status-content-icon-solid-success, #24a15e);
+  }
+
+  .toast .close-toast {
+    margin-left: auto;
+    cursor: pointer;
+    color: #fff;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .toast .close-toast:hover {
+    color: #ccc;
+  }
+}
